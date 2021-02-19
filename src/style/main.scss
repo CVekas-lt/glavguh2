@@ -278,6 +278,9 @@ body {
     .vhod {
         padding: 15px 15px;
     }
+    .title {
+        padding-left: 15px;
+    }
 }
 
 @media(max-width: 1024px) {
@@ -330,6 +333,11 @@ body {
     .content {
         padding: 0 15px;
     }
+}
+
+.sidebar__menu li a:hover {
+    color: #023159;
+    text-decoration: none;
 }
 
 @media(max-width: 1024px) {

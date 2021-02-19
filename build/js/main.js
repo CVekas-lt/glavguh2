@@ -2,8 +2,8 @@
     // бургер меню
     const burger = document.querySelector('.burger')
     const sidebar = document.querySelector('.sidebar')
-    burger.addEventListener('click', event => {
+    burger.onclick = function() {
         burger.classList.toggle("active");
         sidebar.classList.toggle("active");
-    })
+    }
 })();
