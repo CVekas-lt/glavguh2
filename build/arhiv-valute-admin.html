@@ -10,6 +10,11 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&amp;display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" crossorigin="anonymous">
     <link rel='stylesheet' type='text/css' media='screen' href='./css/bootstrap.min.css'>
+
+    <!-- плагины -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.14/dist/css/bootstrap-select.min.css">
+
+    <!-- основные стили -->
     <link rel='stylesheet' type='text/css' media='screen' href='./css/main.min.css'>
 </head>
 <div class="main">
@@ -114,41 +119,99 @@
                 </ol>
             </nav>
 
-            <div class="news-d-t">
-                <h1>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua</h1>
-                <div class="news__data">12 Сен 2020</div>
+            <div class="title">
+                АРХИВ ВАЛЮТ
             </div>
-
-
-            <div class="news-d-wrap">
-                <h1>Заголовок 1</h1>
-                <h2>Заголовок 2</h2>
-                <h3>Заголовок 3</h3>
-
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis maiores ipsa obcaecati magni cum tenetur libero quis, voluptatem repellat error cupiditate eaque ipsum nisi? Aspernatur!</p>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia id nemo est repudiandae accusamus soluta iusto, labore, culpa ex in fugiat ab fugit qui nihil, magnam aliquid consequatur. Cumque corporis, eligendi voluptate aperiam dolorum
-                    et distinctio consequuntur dicta eos soluta aut nostrum fuga, sunt iusto ad quis atque praesentium saepe.</p>
-                <p>Lorem ipsum dolor sit amet <b>consectetur adipisicing elit.</b> Omnis maiores ipsa obcaecati magni cum tenetur libero quis, voluptatem repellat error cupiditate eaque ipsum nisi? Aspernatur!</p>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia id nemo est repudiandae accusamus soluta iusto, labore, culpa ex in fugiat ab fugit qui nihil, magnam aliquid consequatur. Cumque corporis, eligendi voluptate aperiam dolorum
-                    et distinctio consequuntur dicta eos soluta aut nostrum fuga, sunt iusto ad quis atque praesentium saepe.</p>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis maiores ipsa obcaecati magni cum tenetur libero quis, voluptatem repellat error cupiditate eaque ipsum nisi? Aspernatur!</p>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia id nemo est repudiandae accusamus soluta iusto, labore, culpa ex in fugiat ab fugit qui nihil, magnam aliquid consequatur. Cumque corporis, eligendi voluptate aperiam dolorum
-                    et distinctio consequuntur dicta eos soluta aut nostrum fuga, sunt iusto ad quis atque praesentium saepe.</p>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis maiores ipsa obcaecati magni cum tenetur libero quis, voluptatem repellat error cupiditate eaque ipsum nisi? Aspernatur!</p>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia id nemo est repudiandae accusamus soluta iusto, labore, culpa ex in fugiat ab fugit qui nihil, magnam aliquid consequatur. Cumque corporis, eligendi voluptate aperiam dolorum
-                    et distinctio consequuntur dicta eos soluta aut nostrum fuga, sunt iusto ad quis atque praesentium saepe.</p>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis maiores ipsa obcaecati magni cum tenetur libero quis, voluptatem repellat error cupiditate eaque ipsum nisi? Aspernatur!</p>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia id nemo est repudiandae accusamus soluta iusto, labore, culpa ex in fugiat ab fugit qui nihil, magnam aliquid consequatur. Cumque corporis, eligendi voluptate aperiam dolorum
-                    et distinctio consequuntur dicta eos soluta aut nostrum fuga, sunt iusto ad quis atque praesentium saepe.</p>
-            </div>
-
-            <div class="news-d-tags">
-                Теги:
-                <div class="news-d-tags__wrap">
-                    <a href="">Подоходный налог</a>
-                    <a href="">Единный социальный взнос</a>
+            <div class="arhiv-val">
+                <div class="arhiv-val__top">
+                    <div class="arhiv-val__select-wrap">
+                        <div class="custom-select">
+                            <select class="select" tabindex="-1">
+                                <option value="arhivw1">2020</option>
+                                <option value="arhivw2">2019</option>
+                                <option value="arhivw3">2018</option>
+                                <option value="arhivw4">2017</option>
+                            </select>
+                        </div>
+                        <div class="custom-select">
+                            <select class="select" tabindex="-1">
+                                <option value="arhivw1">Сентябрь</option>
+                                <option value="arhivw2">Октябрь</option>
+                                <option value="arhivw3">Декабрь</option>
+                                <option value="arhivw4">Февраль</option>
+                            </select>
+                        </div>
+                    </div>
+                    <form class="form-today">
+                        <label>USD</label>
+                        <input placeholder="00.00" class="form-control" type="number">
+                        <label>UAH</label>
+                        <input placeholder="00.00" class="form-control" type="number">
+                        <label>EUR</label>
+                        <input placeholder="00.00" class="form-control" type="number">
+                        <button class="btn btn-primary" type="button" onclick="addVal()">Добавить на сегодня</button>
+                    </form>
                 </div>
+                <div class="arhiv__wrap">
+                    <div class="arhiv__item">
+                        <div class="arhiv__item__top">30.09.2020</div>
+                        <div class="arhiv__item__bot">
+                            <form class="form-today2">
+                                <label>USD</label>
+                                <input placeholder="00.00" class="form-control" type="number">
+                                <label>UAH</label>
+                                <input placeholder="00.00" class="form-control" type="number">
+                                <label>EUR</label>
+                                <input placeholder="00.00" class="form-control" type="number">
+                                <div class="form-today2-wrap">
+                                    <button class="btn btn-primary" type="button" onclick="addVal()">Изменить</button>
+                                    <button class="btn btn-danger" type="button">Удалить</button>
+                                </div>
+
+                            </form>
+                        </div>
+                    </div>
+                    <div class="arhiv__item">
+                        <div class="arhiv__item__top">30.09.2020</div>
+                        <div class="arhiv__item__bot">
+                            <form class="form-today2">
+                                <label>USD</label>
+                                <input placeholder="00.00" class="form-control" type="number">
+                                <label>UAH</label>
+                                <input placeholder="00.00" class="form-control" type="number">
+                                <label>EUR</label>
+                                <input placeholder="00.00" class="form-control" type="number">
+                                <div class="form-today2-wrap">
+                                    <button class="btn btn-primary" type="button" onclick="addVal()">Изменить</button>
+                                    <button class="btn btn-danger" type="button">Удалить</button>
+                                </div>
+
+                            </form>
+                        </div>
+                    </div>
+                    <div class="arhiv__item">
+                        <div class="arhiv__item__top">30.09.2020</div>
+                        <div class="arhiv__item__bot">
+                            <form class="form-today2">
+                                <label>USD</label>
+                                <input placeholder="00.00" class="form-control" type="number">
+                                <label>UAH</label>
+                                <input placeholder="00.00" class="form-control" type="number">
+                                <label>EUR</label>
+                                <input placeholder="00.00" class="form-control" type="number">
+                                <div class="form-today2-wrap">
+                                    <button class="btn btn-primary" type="button" onclick="addVal()">Изменить</button>
+                                    <button class="btn btn-danger" type="button">Удалить</button>
+                                </div>
+
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
             </div>
+
+
         </div>
         <footer class="contact">
             <div>Социальные сети</div>
@@ -158,7 +221,13 @@
             <p>© 2016-2020 "Главбух" Электроно информационое издание</p>
         </footer>
     </div>
+    <!-- всплывашка -->
+    <div id="add-info" class="info-label" style="display: none;">
+        Запись добавлена
+    </div>
+
     <script src="./libs/bootstrap/bootstrap.bundle.min.js"></script>
+    <script src="./libs/select/custom-select.js"></script>
     <script src="./js/main.js"></script>
     </body>
 
