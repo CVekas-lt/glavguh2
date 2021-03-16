@@ -1,8 +1,15 @@
 .arhiv-val__select-wrap {
     display: flex;
     flex-wrap: wrap;
+    align-items: flex-start;
 }
 
+
+.arhiv-val__select-wrap .nice-select{
+    margin-right: 15px;
+    margin-bottom: 15px;
+    width: 132px;
+}
 .arhiv-val__top {
     padding: 15px;
     display: flex;
@@ -112,8 +119,8 @@
     .arhiv-val__select-wrap {
         margin-bottom: 15px;
         margin-right: -15px;
-        .custom-select {
-            min-width: 120px;
+        .form-select {
+            width: 120px;
         }
     }
 }

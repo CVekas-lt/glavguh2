@@ -181,7 +181,8 @@ body {
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
   border-bottom: 1px solid #c2c2c2;
-  margin-bottom: 0; }
+  margin-bottom: 0;
+  background-color: #fff; }
 
 .breadcrumb li {
   list-style: none;
@@ -353,70 +354,62 @@ body {
     display: block;
     margin: 0 auto; } }
 
-.custom-select {
-  position: relative;
-  display: inline-block;
-  width: auto;
-  min-width: 132px;
-  margin-right: 15px;
-  margin-bottom: 15px; }
+.nice-select {
+  display: block;
+  font-size: 12px;
+  line-height: 38px;
+  color: #FFF;
+  height: 38px;
+  background: #00A1D9;
+  border-radius: 0;
+  padding: 0; }
+  .nice-select span {
+    width: 100%;
+    padding-left: 10px;
+    padding-right: 25px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    display: block; }
 
-.custom-select select {
-  display: none;
-  /*hide original SELECT element: */ }
-
-.select-selected {
-  background-color: #0d6efd; }
-
-/* Style the arrow inside the select element: */
-.select-selected:after {
+.nice-select:after {
   position: absolute;
-  content: "";
-  top: 14px;
-  right: 10px;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 80%;
+  max-width: 8px;
+  margin: auto;
   width: 0;
   height: 0;
-  border: 6px solid transparent;
-  border-color: #fff transparent transparent transparent; }
+  border: 4px solid transparent;
+  border-top-color: #FFF;
+  border-bottom: none;
+  -webkit-transform: translate(0);
+          transform: translate(0); }
 
-/* Point the arrow upwards when the select box is open (active): */
-.select-selected.select-arrow-active:after {
-  border-color: transparent transparent #fff transparent;
-  top: 7px; }
+.nice-select.open:after {
+  -webkit-transform: rotate(0);
+          transform: rotate(0); }
 
-.fadein {
-  opacity: 1 !important; }
+.nice-select .nice-select-dropdown {
+  width: 100%;
+  border-radius: 0;
+  min-width: -webkit-max-content;
+  min-width: max-content; }
 
-/* style the items (options), including the selected item: */
-.select-items div,
-.select-selected {
-  color: #000;
-  padding: 8px 16px;
-  padding-right: 30px;
-  border: 1px solid transparent;
-  border-color: transparent transparent rgba(0, 0, 0, 0.1) transparent;
-  cursor: pointer; }
-
-.select-selected {
-  color: #fff; }
-
-/* Style items (options): */
-.select-items {
-  position: absolute;
-  background-color: #fff;
-  top: 100%;
-  left: 0;
-  right: 0;
-  z-index: 99; }
-
-/* Hide the items when the select box is closed: */
-.select-hide {
-  display: none; }
-
-.select-items div:hover,
-.same-as-selected {
+.nice-select .option.focus, .nice-select .option.selected.focus, .nice-select .option:hover {
   background: #1aaadd;
-  color: #FFF !important; }
+  color: #FFF; }
+
+.nice-select .list {
+  border-radius: 0;
+  margin-bottom: 0; }
+
+.nice-select .option {
+  color: #000000;
+  padding-left: 10px;
+  padding-right: 10px; }
 
 .news__item {
   padding: 15px; }
@@ -489,7 +482,14 @@ body {
   display: -ms-flexbox;
   display: flex;
   -ms-flex-wrap: wrap;
-      flex-wrap: wrap; }
+      flex-wrap: wrap;
+  -ms-flex-align: start;
+      align-items: flex-start; }
+
+.arhiv-val__select-wrap .nice-select {
+  margin-right: 15px;
+  margin-bottom: 15px;
+  width: 132px; }
 
 .arhiv-val__top {
   padding: 15px;
@@ -594,8 +594,8 @@ body {
   .arhiv-val__select-wrap {
     margin-bottom: 15px;
     margin-right: -15px; }
-    .arhiv-val__select-wrap .custom-select {
-      min-width: 120px; } }
+    .arhiv-val__select-wrap .form-select {
+      width: 120px; } }
 
 @media (max-width: 767px) {
   .form-today {
@@ -631,3 +631,203 @@ body {
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
   opacity: 0;
   transition: 0.3s all; }
+
+.calendar__select-wrap {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  margin: 0 -7px;
+  padding-top: 10px;
+  max-width: 375px; }
+  .calendar__select-wrap .nice-select {
+    width: calc(50% - 14px);
+    margin: 0 7px;
+    margin-bottom: 14px; }
+
+#calendar {
+  max-width: 375px;
+  border-top: 1px solid #dad9d9;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid #dad9d9; }
+  #calendar .datepicker-picker {
+    background-color: transparent; }
+  #calendar .datepicker-controls .button {
+    background-color: transparent; }
+  #calendar .datepicker-controls .button:hover {
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1); }
+  #calendar .datepicker-grid {
+    width: 100%; }
+  #calendar .datepicker-picker {
+    width: 100%; }
+  #calendar .datepicker-cell {
+    border-radius: 0; }
+  #calendar .highlighted {
+    color: #ff0000;
+    background-color: transparent; }
+  #calendar .datepicker-cell.selected {
+    color: #fff;
+    background-color: #3273dc; }
+  #calendar .datepicker-view .dow {
+    text-transform: uppercase; }
+
+.calendar__block {
+  width: 100%;
+  background-color: #fff; }
+
+.calendar__top2 {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: justify;
+      justify-content: space-between;
+  -ms-flex-align: center;
+      align-items: center;
+  font-size: 18px;
+  font-weight: 600;
+  padding: 15px 15px;
+  border-bottom: 1px solid #dad9d9; }
+
+.calendar__top2 span {
+  font-size: 16px;
+  font-weight: 400; }
+
+.calendar__text {
+  padding-top: 15px;
+  border-bottom: 1px solid #dad9d9; }
+
+.calendar__text__bot {
+  padding: 15px 0; }
+
+.calendar__text__bot a {
+  color: #167bc1; }
+
+.calendar__child {
+  border-bottom: 1px solid #dad9d9;
+  position: relative;
+  padding: 25px 0; }
+
+.calendar-more-btn {
+  position: absolute;
+  right: 10px;
+  bottom: 10px;
+  background-color: transparent;
+  border: 0;
+  color: #167bc1; }
+
+.calendar-more-btn .calendar-more-btn2 {
+  display: none; }
+
+.calendar__child.active .calendar-more-btn .calendar-more-btn2 {
+  display: block; }
+
+.calendar__child.active .calendar-more-btn .calendar-more-btn1 {
+  display: none; }
+
+.calendar__child.active .calendar__item__v {
+  margin-bottom: 25px; }
+
+.calendar__item__h {
+  display: none; }
+
+.calendar__item__v {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: start;
+      align-items: flex-start;
+  -ms-flex-pack: justify;
+      justify-content: space-between;
+  padding: 0 15px; }
+
+.calendar__item.cal-buh {
+  font-size: 10px; }
+
+.calendar__item.this {
+  background-color: #167bc1;
+  color: #fff; }
+
+.calendar__item {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: column;
+      flex-direction: column;
+  -ms-flex-pack: justify;
+      justify-content: space-between;
+  -ms-flex-align: center;
+      align-items: center;
+  padding: 5px 0;
+  border-radius: 5px;
+  width: 40px;
+  height: 50px; }
+
+.calendar__item.cal-buh span {
+  font-size: 12px; }
+
+.calendar__item__v2 {
+  -ms-flex: 1;
+      flex: 1;
+  font-size: 16px;
+  font-weight: 600;
+  padding: 0 15px;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden; }
+
+.calendar__item__h__item {
+  padding: 20px 15px;
+  display: -ms-flexbox;
+  display: flex; }
+
+.calendar__item__h__name {
+  font-weight: 500;
+  margin-right: 10px;
+  -ms-flex: 0 0 100px;
+      flex: 0 0 100px; }
+
+.calendar__item__h__item p {
+  -ms-flex: 1;
+      flex: 1; }
+
+.calendar__item__h__item p a {
+  color: #167bc1;
+  display: block;
+  margin-bottom: 7px;
+  text-decoration: none; }
+
+.calendar__list::-webkit-scrollbar {
+  width: 5px;
+  padding-bottom: 10px; }
+
+.calendar__list::-webkit-scrollbar-thumb {
+  background: #167bc1; }
+
+.calendar__list::-webkit-scrollbar-track {
+  background: #c1bfbf; }
+
+.calendar__list {
+  height: 656px;
+  overflow: auto;
+  padding-bottom: 25px; }
+
+@media (max-width: 1024px) {
+  .calendar__item__v2 {
+    font-size: 14px; }
+  .calendar__child.active .calendar__item__v2 {
+    overflow: visible;
+    display: block; }
+  .calendar__text__bot {
+    margin-bottom: 25px; } }
+
+@media (max-width: 767px) {
+  .calendar__item__h__item {
+    -ms-flex-direction: column;
+        flex-direction: column; }
+  .calendar__item__h__name {
+    -ms-flex: auto;
+        flex: auto;
+    margin-bottom: 15px; }
+  .calendar__top2 {
+    font-size: 16px; }
+  .calendar__top2 span {
+    font-size: 14px; } }
