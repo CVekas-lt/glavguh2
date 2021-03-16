@@ -6,6 +6,16 @@ body {
     color: #000;
 }
 
+.h1,
+h1 {
+    font-size: 2rem;
+}
+
+.h2,
+h2 {
+    font-size: 1.5rem;
+}
+
 .btn {
     border-radius: 0;
     font-size: 14px;
@@ -191,7 +201,6 @@ body {
     padding: 15px 15px;
     display: flex;
     flex-wrap: wrap;
-    border-bottom: 1px solid #c2c2c2;
     margin-bottom: 0;
     background-color: #fff;
 }
@@ -223,6 +232,7 @@ body {
     background-color: #fff;
     padding: 10px 30px;
     border-bottom: 1px solid #c2c2c2;
+    border-top: 1px solid #c2c2c2;
     padding-top: 12px;
 }
 
@@ -395,7 +405,8 @@ body {
         margin: 0 auto;
     }
 }
-.nice-select{
+
+.nice-select {
     display: block;
     font-size: 12px;
     line-height: 38px;
@@ -404,7 +415,7 @@ body {
     background: #00A1D9;
     border-radius: 0;
     padding: 0;
-    span{
+    span {
         width: 100%;
         padding-left: 10px;
         padding-right: 25px;
@@ -414,7 +425,8 @@ body {
         display: block;
     }
 }
-.nice-select:after{
+
+.nice-select:after {
     position: absolute;
     top: 0;
     right: 0;
@@ -429,23 +441,30 @@ body {
     border-bottom: none;
     transform: translate(0)
 }
-.nice-select.open:after{
+
+.nice-select.open:after {
     transform: rotate(0);
 }
-.nice-select .nice-select-dropdown{
+
+.nice-select .nice-select-dropdown {
     width: 100%;
     border-radius: 0;
     min-width: max-content;
 }
-.nice-select .option.focus, .nice-select .option.selected.focus, .nice-select .option:hover{
+
+.nice-select .option.focus,
+.nice-select .option.selected.focus,
+.nice-select .option:hover {
     background: #1aaadd;
     color: #FFF;
 }
-.nice-select .list{
+
+.nice-select .list {
     border-radius: 0;
     margin-bottom: 0;
 }
-.nice-select .option{
+
+.nice-select .option {
     color: #000000;
     padding-left: 10px;
     padding-right: 10px;
@@ -454,3 +473,4 @@ body {
 @import './template/news.scss';
 @import './template/arhiv.scss';
 @import './template/calendar.scss';
+@import './template/contact.scss';

@@ -25,11 +25,29 @@
 
     let calendarBtn = document.querySelectorAll('.calendar-more-btn')
     for (let button of calendarBtn) {
-        button.addEventListener('click', function(event) {
+        button.addEventListener('click', () => {
             button.closest('.calendar__child').classList.toggle("active");
             slideToggle(button.closest('.calendar__child').querySelector('.calendar__item__h'), 200)
         })
     }
+
+    // контакты
+
+    // валидация формы
+    // пример валидации формы с id contact-form
+    var form = document.getElementById("contact-form");
+
+    var pristine = new Pristine(form);
+
+    form.addEventListener('submit', function(e) {
+        e.preventDefault();
+        var valid = pristine.validate();
+        if (valid) {
+            fadeOut(form)
+            fadeIn(document.getElementById('contact-form-susses'), 'block')
+        }
+    });
+
 
 })();
 
@@ -123,3 +141,27 @@ function _s(el, duration, callback, isDown) {
 
     window.requestAnimationFrame(step);
 }
+
+
+function fadeIn(el, display) {
+    el.style.opacity = 0;
+    el.style.display = display || 'block';
+    (function fade() {
+        var val = parseFloat(el.style.opacity);
+        if (!((val += .1) > 1)) {
+            el.style.opacity = val;
+            requestAnimationFrame(fade);
+        }
+    })();
+}
+
+function fadeOut(el) {
+    el.style.opacity = 1;
+    (function fade() {
+        if ((el.style.opacity -= .1) < 0) {
+            el.style.display = 'none';
+        } else {
+            requestAnimationFrame(fade);
+        }
+    })();
+};
