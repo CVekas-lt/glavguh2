@@ -13,6 +13,10 @@ h1 {
 h2 {
   font-size: 1.5rem; }
 
+.h3,
+h3 {
+  font-size: 1.2rem; }
+
 .btn {
   border-radius: 0;
   font-size: 14px; }
@@ -921,3 +925,46 @@ h2 {
 .forgot .btn-primary {
   margin-bottom: 10px;
   width: 100%; }
+
+.help-wrap {
+  max-width: 1140px;
+  margin: 0 auto;
+  padding-right: 15px;
+  padding-left: 15px; }
+
+.help__content.active {
+  display: block; }
+
+.help__content {
+  display: none; }
+
+.help__right {
+  border-left: 1px solid #ddd;
+  list-style-type: none;
+  margin: 0;
+  padding: 0; }
+
+.help__right__group {
+  margin-bottom: 15px; }
+
+.help__right__t {
+  padding: 5px 15px;
+  color: rgba(52, 73, 94, 0.3);
+  text-transform: uppercase;
+  font-size: 14px; }
+
+.help__right__item.active {
+  background: #0d6efd;
+  color: #fff; }
+
+.help__right__item {
+  padding: 5px 15px;
+  cursor: pointer; }
+
+@media (max-width: 767px) {
+  .help-wrap .row {
+    -ms-flex-direction: column-reverse;
+        flex-direction: column-reverse; }
+  .help__left {
+    padding: 0;
+    padding-top: 50px; } }
