@@ -123,73 +123,37 @@
                     </ol>
                 </nav>
 
-                <div class="contact-page">
-                    <h1 class="help-title">Контакты</h1>
-                    <div class="contact-page__wrap">
-                        <h2>Контактная информация</h2>
-                        <p>
-                            Телефон в Москве: +7 (495) 988-6004 (многоканальный)<br> 123098, Россия, г.Москва, ул.Новощукинская, д.7, корп.1, стр.2 (<a href="">Яндекс.Карты</a>)
-                        </p>
-                        <h2>Задайте вопрос</h2>
-                        <p>
-                            У Вас есть вопрос по работе с базой данных? Заполните форму и нажмите кнопку <b>Отправить</b>. Мы постараемся ответить максимально быстро.
-                        </p>
-                        <form class="contact-page-form" id="contact-form">
-                            <input type="hidden" name="sform" value="1">
-                            <div class="row">
-                                <div class="col-sm-4">
-                                    <div class="form-group">
-                                        <label class="control-label">Ваше имя <span class="text-danger">*</span></label>
-                                        <input type="text" name="formname" value="" class="form-control" data-pristine-required-message="Поле должно быть заполнено" required="">
-                                    </div>
-                                </div>
-                                <div class="col-sm-4">
-                                    <div class="form-group">
-                                        <label class="control-label">E-mail <span class="text-danger">*</span></label>
-                                        <input type="text" name="formemail" value="" class="form-control" data-pristine-required-message="Поле должно быть заполнено" required="">
-                                    </div>
-                                </div>
-                                <div class="col-sm-4">
-                                    <div class="form-group">
-                                        <label class="control-label">Телефон</label>
-                                        <input type="text" name="formphone" value="" data-pristine-required-message="Поле должно быть заполнено" class="form-control" required="">
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label class="control-label">Тематика вопроса:</label>
-                                <select name="formquestionto" class="form-control">
-                                <optgroup label="Отдел продаж">
-                                  <option value="Подобрать тарифный план">Подобрать тарифный план</option>
-                                  <option value="Продление лицензии">Продление лицензии</option>
-                                  <option value="Как оплатить?">Как оплатить?</option>
-                                  <option value="Запрос специальных условий">Запрос специальных условий</option>
-                                  <option value="Подобрать документы по теме">Подобрать документы по теме</option>
-                                  <option value="Свой вопрос (комментарий)">Свой вопрос (комментарий)</option>
-                                </optgroup>
-                                <optgroup label="Техническая поддержка">
-                                  <option value="Не могу найти документ">Не могу найти документ</option>
-                                  <option value="Система не принимает мой пароль">Система не принимает мой пароль</option>
-                                  <option value="Я забыл пароль, что делать?">Я забыл пароль, что делать?</option>
-                                  <option value="Ошибка в базе данных!">Ошибка в базе данных!</option>
-                                  <option value="Свой вопрос (комментарий)">Свой вопрос (комментарий)</option>
-                                </optgroup>
-                              </select>
-                            </div>
-                            <div class="form-group">
-                                <label class="control-label">Ваше сообщение (вопрос)</label>
-                                <textarea class="form-control" name="formquestion" rows="6" data-pristine-required-message="Поле должно быть заполнено" required=""></textarea>
-                            </div>
-
-                            <div class="b-well__actions">
-                                <button type="submit" class="btn btn-primary">Отправить</button>
-                            </div>
-                        </form>
-                        <div class="contact-susses" id="contact-form-susses" style="display: none;">
-                            Спасибо! Ваше сообщение отправлено.
-
-                        </div>
+                <h1 class="help-title">Восстановление пароля</h1>
+                <div class="log-page">
+                    <div class="contact-warn" style="display: block;">
+                        Email адрес не зарегестрирован!
                     </div>
+                    <div class="contact-susses" style="display: block;">
+                        Код востановления пароля отправлен на почту
+                    </div>
+                    <form class="box-form forgot" id="forgot" method="post">
+                        <input type="hidden" name="token" id="token" value="03AGdBq25g7kwxN5HXE1PdhDhjc6xITQp9dP10J3evVMQDqq_Y-NnSYn1bprpVVaU4MFmnCE2gQlOcCDnVAq6SeBXXrTZOgiS754AQYMRBFhTOm-2Tx6B6ocv9QiSpY2FnwiUmas_LEDcUOllWiCqp8X_CNp8tusky8lWqUDDEeqAyaX-Wz_JXx6ttnc6k68lXlxrQmXP0CtMHnZqJZhjmeKNh9RXMR-D1r25UoXexDk7c-VT_qGU6-oHxk-Cf1SOcLiX8Xx78kcg5PK6Su2oFzlozC2i4i5lJFWCfsFbIkjy__aarTrT_k2ng_TVd66t_4mHYpWhHletkNX038GrtV_HoQ69E9bLBCEd9FQ0MYad691PH5gQsSKrLF7RSFU8hNEm0fTkeYVQRJobN9_O7AuqD4QV2ukQTwVg-GMfHhhQQJdWFpvEOiVgsIVWou6Wd0DDI8m09hZsyLB0WpcJkB5YjoKuaimB1og">
+                        <div class="box-form__group">
+                            <p class="help-block">Пожалуйста, введите ваш email, который был указан при регистрации и мы вышлем вам логин и пароль.</p>
+                            <div class="form-group">
+                                <input type="hidden" name="step" value="2">
+                                <label class="control-label">E-mail<span class="text-danger">*</span></label>
+                                <input class="form-control input-lg" type="text" name="username" data-pristine-required-message="Поле должно быть заполнено" value="" required="">
+                            </div>
+                        </div>
+                        <div class="box-form__group">
+                            <button type="submit" name="loginbtn" class="btn btn-primary btn-lg btn-block">Отправить</button>
+
+                            <div class="row m-t-15">
+                                <div class="col-sm-6">
+                                    <a href="">Вход</a>
+                                </div>
+                                <div class="col-sm-6 text-right">
+                                    <p><a href="">Регистрация</a></p>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
                 </div>
 
                 <footer class="contact">

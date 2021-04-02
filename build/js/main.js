@@ -35,18 +35,34 @@
 
     // валидация формы
     // пример валидации формы с id contact-form
-    var form = document.getElementById("contact-form");
+    if (document.getElementById("contact-form")) {
+        let form = document.getElementById("contact-form");
 
-    var pristine = new Pristine(form);
+        let pristine = new Pristine(form);
 
-    form.addEventListener('submit', function(e) {
-        e.preventDefault();
-        var valid = pristine.validate();
-        if (valid) {
-            fadeOut(form)
-            fadeIn(document.getElementById('contact-form-susses'), 'block')
-        }
-    });
+        form.addEventListener('submit', function(e) {
+            e.preventDefault();
+            var valid = pristine.validate();
+            if (valid) {
+                fadeOut(form)
+                fadeIn(document.getElementById('contact-form-susses'), 'block')
+            }
+        });
+    }
+
+    //востановить пароль
+    if (document.getElementById("forgot")) {
+        let form = document.getElementById("forgot");
+
+        let pristine = new Pristine(form);
+
+        form.addEventListener('submit', function(e) {
+            e.preventDefault();
+            let valid = pristine.validate();
+
+        });
+    }
+
 
 
 })();

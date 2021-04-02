@@ -882,5 +882,42 @@ h2 {
   border-left-style: solid;
   padding: 15px 10px; }
 
+.contact-warn {
+  display: none;
+  border-color: #9acfea;
+  background-color: #f2dede;
+  border-color: #dca7a7;
+  color: #a94442;
+  border: none;
+  border-left-width: 3px;
+  border-left-style: solid;
+  padding: 15px 10px; }
+
 .pristine-error {
   color: #a94442; }
+
+.log-page {
+  background-color: #fff;
+  padding: 15px;
+  max-width: 455px;
+  margin: 0 auto; }
+
+.log-page .contact-warn,
+.log-page .contact-susses {
+  margin-bottom: 15px; }
+
+.text-right {
+  text-align: right; }
+
+.forgot a {
+  text-decoration: none; }
+
+.forgot a:hover {
+  text-decoration: underline; }
+
+.forgot label {
+  margin-bottom: 5px; }
+
+.forgot .btn-primary {
+  margin-bottom: 10px;
+  width: 100%; }
