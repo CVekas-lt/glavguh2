@@ -11,6 +11,13 @@ h1 {
     font-size: 2rem;
 }
 
+@media(max-width: 767px) {
+    .h1,
+    h1 {
+        font-size: 1.8rem;
+    }
+}
+
 .h2,
 h2 {
     font-size: 1.5rem;
@@ -51,12 +58,14 @@ h3 {
     overflow: auto;
     padding-bottom: 10px;
     width: 300px;
+    min-width: 300px;
     min-height: 100vh;
 }
 
 .content {
-    flex: 1;
     padding: 0 25px;
+    flex-basis: calc(100% - 300px);
+    width: calc(100% - 300px);
 }
 
 .main {
@@ -294,6 +303,7 @@ h3 {
     }
     .sidebar {
         width: 240px;
+        min-width: 240px;
     }
     .sidebar__menu {
         margin-left: 15px;
@@ -304,6 +314,11 @@ h3 {
     }
     .title {
         padding-left: 15px;
+    }
+    .content {
+        padding: 0 15px;
+        flex-basis: calc(100% - 240px);
+        width: calc(100% - 240px);
     }
 }
 
@@ -372,9 +387,6 @@ h3 {
     .login img {
         margin-right: 0;
     }
-    .content {
-        padding: 0 15px;
-    }
 }
 
 .sidebar__menu li a:hover {
@@ -383,6 +395,10 @@ h3 {
 }
 
 @media(max-width: 1024px) {
+    .content {
+        width: 100%;
+        flex-basis: 100%;
+    }
     .login a {
         text-decoration: none;
     }
@@ -480,3 +496,5 @@ h3 {
 @import './template/calendar.scss';
 @import './template/contact.scss';
 @import './template/help.scss';
+@import './template/login.scss';
+@import './template/normbasa.scss';
