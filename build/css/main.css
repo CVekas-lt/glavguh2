@@ -558,6 +558,8 @@ h3 {
   border: 1px solid #c2c2c2;
   display: -ms-flexbox;
   display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
   -ms-flex-pack: center;
       justify-content: center;
   padding: 15px 0; }
@@ -661,6 +663,9 @@ h3 {
   opacity: 0;
   transition: 0.3s all; }
 
+.info-label.fadein {
+  opacity: 1; }
+
 .calendar__select-wrap {
   display: -ms-flexbox;
   display: flex;
@@ -702,6 +707,7 @@ h3 {
     text-transform: uppercase; }
 
 .calendar__block {
+  margin-top: 1px;
   width: 100%;
   background-color: #fff; }
 
@@ -1388,12 +1394,19 @@ a.tr {
     -ms-flex: 0 0 240px;
         flex: 0 0 240px; }
   .otchet__tree {
-    padding-left: 0; } }
+    padding-left: 0; }
+  .tree__item span {
+    font-size: 12px; } }
 
 @media (max-width: 767px) {
   .otchet-d__wrap {
     -ms-flex-direction: column;
-        flex-direction: column; } }
+        flex-direction: column; }
+  .otchet-d__left {
+    -ms-flex: auto;
+        flex: auto; }
+  .tree__item span {
+    font-size: 14px; } }
 
 @media (max-width: 524px) {
   .js-tabs__header {
@@ -1663,3 +1676,24 @@ a.tr {
     padding: 10px 5px; }
   .tree__item2 .tree__item__wrap:hover {
     background-color: #dfdfdf; }
+
+.otchet__wrap {
+  padding: 15px; }
+
+.otchet__wrap a {
+  display: -ms-flexbox;
+  display: flex;
+  margin-bottom: 10px;
+  text-decoration: none;
+  font-weight: 600;
+  color: #000; }
+
+.otchet__wrap a:hover span {
+  text-decoration: underline; }
+
+@media (max-width: 767px) {
+  .otchet__wrap a {
+    margin-bottom: 15px; } }
+
+.otchet__wrap a i {
+  margin-right: 5px; }

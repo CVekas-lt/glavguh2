@@ -4,12 +4,12 @@
     align-items: flex-start;
 }
 
-
-.arhiv-val__select-wrap .nice-select{
+.arhiv-val__select-wrap .nice-select {
     margin-right: 15px;
     margin-bottom: 15px;
     width: 132px;
 }
+
 .arhiv-val__top {
     padding: 15px;
     display: flex;
@@ -43,6 +43,7 @@
 .arhiv__item__bot {
     border: 1px solid #c2c2c2;
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
     padding: 15px 0;
 }
@@ -162,4 +163,8 @@
     box-shadow: 0 0 5px rgba($color: #000000, $alpha: .3);
     opacity: 0;
     transition: 0.3s all;
+}
+
+.info-label.fadein {
+    opacity: 1;
 }

@@ -375,11 +375,20 @@ a.tr {
     .otchet__tree {
         padding-left: 0;
     }
+    .tree__item span {
+        font-size: 12px;
+    }
 }
 
 @media (max-width: 767px) {
     .otchet-d__wrap {
         flex-direction: column;
+    }
+    .otchet-d__left {
+        flex: auto;
+    }
+    .tree__item span {
+        font-size: 14px;
     }
 }
 
@@ -694,4 +703,30 @@ a.tr {
     .tree__item__wrap:hover {
         background-color: #dfdfdf;
     }
+}
+
+.otchet__wrap {
+    padding: 15px;
+}
+
+.otchet__wrap a {
+    display: flex;
+    margin-bottom: 10px;
+    text-decoration: none;
+    font-weight: 600;
+    color: #000;
+}
+
+.otchet__wrap a:hover span {
+    text-decoration: underline;
+}
+
+@media (max-width: 767px) {
+    .otchet__wrap a {
+        margin-bottom: 15px;
+    }
+}
+
+.otchet__wrap a i {
+    margin-right: 5px;
 }
