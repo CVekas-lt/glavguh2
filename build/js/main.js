@@ -62,7 +62,109 @@
         });
     }
 
+    // help
+    let helpItems = document.querySelectorAll('.help__right__item')
+    let helpContent = document.querySelectorAll('.help__content')
+    for (let i = 0; i < helpItems.length; i++) {
+        helpItems[i].setAttribute('data-index', i);
+    }
 
+    // слушает клик
+    for (let helpItem of helpItems) {
+        helpItem.addEventListener('click', (e) => {
+            [].forEach.call(helpItems, function(el) {
+                el.classList.remove('active')
+            });
+            [].forEach.call(helpContent, function(el) {
+                el.classList.remove('active')
+            });
+            helpContent[helpItem.getAttribute('data-index')].classList.add('active')
+            helpItem.classList.add('active')
+
+            // прокрутка к контенту на моб
+            if (window.innerWidth < 768) {
+                let contentOffsetTop = helpContent[helpItem.getAttribute('data-index')].offsetTop
+                window.scrollTo({
+                    top: contentOffsetTop - 50,
+                    behavior: "smooth"
+                })
+            }
+        })
+    }
+
+    // normbasa-d
+    let otchetTreeItems = document.querySelectorAll('.itemfor')
+    let otchetItems = document.querySelectorAll('.otchet__item')
+    for (let otchetTreeItem of otchetTreeItems) {
+        otchetTreeItem.addEventListener('click', function() {
+            [].forEach.call(otchetTreeItems, function(el) {
+                el.classList.remove('active')
+            });
+            [].forEach.call(otchetItems, function(el) {
+                el.classList.remove('active')
+            });
+
+            otchetTreeItem.classList.add('active')
+            otchetItems[otchetTreeItem.getAttribute('data-for')].classList.add('active')
+
+        })
+    }
+
+    // спойлер
+    document.querySelectorAll('.spoiler-head').forEach(el => el.addEventListener('click', function() {
+        let nextBody = el.closest('.spoiler-wrap').querySelector('.spoiler-body')
+        slideToggle(nextBody, 200)
+    }));
+
+    // выбор редакции
+    if (document.querySelector('.norm-select__top')) {
+        let normSelectTop = document.querySelector('.norm-select__top')
+        normSelectTop.addEventListener('click', function() {
+            normSelectTop.closest('.norm-select').classList.toggle('active')
+        })
+
+        let outElem = document.querySelector('.norm-select');
+        document.addEventListener('click', function(event) {
+            let isClickInside = outElem.contains(event.target);
+            if (!isClickInside) {
+                outElem.classList.remove('active')
+            }
+        });
+
+        let normSelectData = document.querySelector('.norm-select-data')
+        let letNormSelectLi = document.querySelectorAll('.norm-select__bot li')
+        letNormSelectLi.forEach(el => el.addEventListener('click', function() {
+            normSelectData.textContent = el.textContent
+            outElem.classList.remove('active')
+        }))
+    }
+
+    // otchet__tree2
+    let treeLevel = document.querySelectorAll('.tree__item__wrap')
+    for (el of treeLevel) {
+        el.addEventListener('click', function() {
+            let parent = this.closest('.tree__item')
+            if (parent.classList.contains('active')) {
+                parent.classList.remove('active')
+            } else {
+                otherParent = parent.closest('ul').querySelectorAll('.tree__item');
+                [].forEach.call(otherParent, function(el) {
+                    el.classList.remove('active')
+                })
+                parent.classList.add('active')
+            }
+        })
+    }
+
+    let treeFors = document.querySelectorAll('.tree__for')
+    for (treeFor of treeFors) {
+        treeFor.addEventListener('click', function() {
+            [].forEach.call(otchetItems, function(el) {
+                el.classList.remove('active')
+            })
+            otchetItems[this.getAttribute('data-for')].classList.add('active')
+        })
+    }
 
 })();
 

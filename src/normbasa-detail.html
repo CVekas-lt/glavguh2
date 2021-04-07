@@ -120,7 +120,7 @@
                 <div class="norm-d">
                     <div class="js-tabs js-tabs-d">
                         <div class="row">
-                            <div class="col-lg-6 col-md-7">
+                            <div class="col-md-7">
                                 <ul class="js-tabs__header tabs__list">
                                     <li class="tab is-active">Текст</li>
                                     <li class="tab">Редакции</li>
@@ -128,7 +128,7 @@
                                     <li class="tab">Связи</li>
                                 </ul>
                             </div>
-                            <div class="col-lg-6 col-md-5">
+                            <div class="col-md-5">
                                 <div class="norm-select">
                                     <div class="norm-select__top">
                                         <span>Вступит в дейстиве</span>
@@ -154,7 +154,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="otchet__name">Декларация акцизного налога</div>
+                        <div class="otchet__name2">Декларация акцизного налога</div>
                         <div class="tabs__container">
                             <div class="js-tabs__content is-active">
                                 <h2>Lorem ipsum dolor</h2>
@@ -323,33 +323,6 @@
     <script src="./libs/tabs/tabby.min.js"></script>
     <script src="./libs/lightbox/fslightbox.js"></script>
     <script src="./js/main.js"></script>
-    <script>
-        // спойлер
-        document.querySelectorAll('.spoiler-head').forEach(el => el.addEventListener('click', function() {
-            let nextBody = el.closest('.spoiler-wrap').querySelector('.spoiler-body')
-            slideToggle(nextBody, 200)
-        }));
-
-        // выбор редакции
-        let normSelectTop = document.querySelector('.norm-select__top')
-        normSelectTop.addEventListener('click', function() {
-            normSelectTop.closest('.norm-select').classList.toggle('active')
-        })
-
-        var outElem = document.querySelector('.norm-select');
-        document.addEventListener('click', function(event) {
-            var isClickInside = outElem.contains(event.target);
-            if (!isClickInside) {
-                outElem.classList.remove('active')
-            }
-        });
-        let normSelectData = document.querySelector('.norm-select-data')
-        let letNormSelectLi = document.querySelectorAll('.norm-select__bot li')
-        letNormSelectLi.forEach(el => el.addEventListener('click', function() {
-            normSelectData.textContent = el.textContent
-            outElem.classList.remove('active')
-        }))
-    </script>
 </body>
 
 </html>

@@ -319,41 +319,6 @@
     <script src="./libs/select/custom-select.js"></script>
     <script src="./libs/validate/pristine.min.js"></script>
     <script src="./js/main.js"></script>
-
-    <script>
-        (function() {
-
-            let helpItems = document.querySelectorAll('.help__right__item')
-            let helpContent = document.querySelectorAll('.help__content')
-            for (let i = 0; i < helpItems.length; i++) {
-                helpItems[i].setAttribute('data-index', i);
-            }
-
-            // слушает клик
-            for (let helpItem of helpItems) {
-                helpItem.addEventListener('click', (e) => {
-                    [].forEach.call(helpItems, function(el) {
-                        el.classList.remove('active')
-                    });
-                    [].forEach.call(helpContent, function(el) {
-                        el.classList.remove('active')
-                    });
-                    helpContent[helpItem.getAttribute('data-index')].classList.add('active')
-                    helpItem.classList.add('active')
-
-                    // прокрутка к контенту на моб
-                    if (window.innerWidth < 768) {
-                        let contentOffsetTop = helpContent[helpItem.getAttribute('data-index')].offsetTop
-                        window.scrollTo({
-                            top: contentOffsetTop - 50,
-                            behavior: "smooth"
-                        })
-                    }
-                })
-            }
-
-        })();
-    </script>
 </body>
 
 </html>

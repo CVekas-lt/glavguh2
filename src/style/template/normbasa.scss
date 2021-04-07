@@ -535,13 +535,15 @@ a.tr {
     }
 }
 
-.otchet__name {
+.otchet__name2 {
     margin-top: 0;
     padding: 0 15px;
     padding-top: 23px;
     margin-bottom: 0;
     margin-top: 25px;
     border-top: 1px solid #f7f4f4;
+    font-size: 18px;
+    font-weight: 600;
 }
 
 .norm-list {
@@ -607,5 +609,89 @@ a.tr {
 @media(max-width: 767px) {
     .norm-select {
         margin-top: 25px;
+    }
+}
+
+.otchet__tree2 ul {
+    padding-left: 20px;
+}
+
+.otchet__tree2 ul li {
+    list-style: none;
+}
+
+.otchet__tree2>ul {
+    padding-left: 0;
+}
+
+.tree__item {
+    cursor: pointer;
+    padding: 5px 0;
+}
+
+.tree__item__wrap {
+    display: flex;
+    align-items: flex-start;
+    flex-wrap: wrap;
+}
+
+.tree__item__wrap i {
+    display: none;
+    margin-right: 3px;
+    width: 12px;
+    margin-top: 1px;
+}
+
+.tree__item span {
+    display: inline-block;
+    flex: 1;
+}
+
+.tree__item ul {
+    width: 100%;
+    margin-bottom: 5px;
+    margin-top: 5px;
+}
+
+.tree__item ul {
+    display: none;
+}
+
+.tree__item.active>ul {
+    display: block;
+}
+
+.tree__item__wrap .active>ul {
+    display: block;
+}
+
+.tree__item__wrap>i.fa-file {
+    display: block;
+}
+
+.tree__item>.tree__item__wrap>i.fa-plus-square {
+    display: inline-block;
+}
+
+.tree__item.active>.tree__item__wrap>i.fa-plus-square {
+    display: none;
+}
+
+.tree__item.active>.tree__item__wrap>i.fa-minus-square {
+    display: inline-block;
+}
+
+.tree__item2 {
+    margin-bottom: 0;
+    padding: 0;
+    i {
+        margin-right: 3px;
+    }
+    .tree__item__wrap {
+        margin-bottom: 0;
+        padding: 10px 5px;
+    }
+    .tree__item__wrap:hover {
+        background-color: #dfdfdf;
     }
 }
