@@ -1,284 +1,143 @@
-(function() {
+document.addEventListener("DOMContentLoaded", function(event) { 
+    var lazyLoadInstance = new LazyLoad();
+    // поиск на моб
+    let headerMob = document.getElementById('header__mob');
+    let searchMobOpen = document.getElementById('search-mob__icon');
+    let searchClose = document.getElementById('search-mob__cancel');
+    let searchMobInput = document.getElementById('search-mob-input'); 
+    
+    searchMobOpen.addEventListener('click', function(){
+       headerMob.classList.add('search-active');
+       searchMobInput.focus()
+    })
+
+    searchClose.addEventListener('click', function(){
+        headerMob.classList.remove('search-active')
+    })
+
     // бургер меню
-    const burger = document.querySelector('.burger')
-    const sidebar = document.querySelector('.sidebar')
-    burger.onclick = function() {
-        burger.classList.toggle("active");
-        sidebar.classList.toggle("active");
+    let mobNavBurger = document.getElementById('mob-nav-burger');
+    let burger = document.getElementById('burger');
+    let burgerClose = document.getElementById('burger-close');
+    
+    burger.addEventListener('click', function(){
+        mobNavBurger.classList.add('active')
+    })
+    burgerClose.addEventListener('click', function(){
+        mobNavBurger.classList.remove('active')
+    })
+
+    // свайп в лево
+    let x;
+    window.addEventListener('touchstart', e => x = e.changedTouches[0].clientX);
+    window.addEventListener('touchend', e => e.changedTouches[0].clientX - x < -50 && swipeLeft());
+
+    function swipeLeft() {
+        // меню бергер
+        mobNavBurger.classList.remove('active')
+        // меню каталог
+        mobNavCatalog.classList.remove('active')
     }
 
-    if (document.querySelectorAll(".select").length) {
-        var els = document.querySelectorAll(".select");
-        els.forEach(function(select) {
-            NiceSelect.bind(select);
-        });
-    }
+    // главная слайдер сверху
+    const swiper = new Swiper('.swiper-top', {
+        // Optional parameters
+        loop: true,
+        slidesPerView: 1,
+        lazy: true,
+      
+        // If we need pagination
+        pagination: {
+          el: '.swiper-pagination',
+        },
+      
+        // Navigation arrows
+        navigation: {
+          nextEl: '.swiper-button-next',
+          prevEl: '.swiper-button-prev',
+        },
+    });
 
-    // календарь
-    if (document.getElementById('calendar')) {
-        const elem = document.getElementById('calendar');
-        const datepicker = new Datepicker(elem, {
-            language: 'ru',
-            daysOfWeekHighlighted: [0, 6]
-        });
-    }
-
-    let calendarBtn = document.querySelectorAll('.calendar-more-btn')
-    for (let button of calendarBtn) {
-        button.addEventListener('click', () => {
-            button.closest('.calendar__child').classList.toggle("active");
-            slideToggle(button.closest('.calendar__child').querySelector('.calendar__item__h'), 200)
-        })
-    }
-
-    // контакты
-
-    // валидация формы
-    // пример валидации формы с id contact-form
-    if (document.getElementById("contact-form")) {
-        let form = document.getElementById("contact-form");
-
-        let pristine = new Pristine(form);
-
-        form.addEventListener('submit', function(e) {
-            e.preventDefault();
-            var valid = pristine.validate();
-            if (valid) {
-                fadeOut(form)
-                fadeIn(document.getElementById('contact-form-susses'), 'block')
+    // главная секция со слайдером
+    // Params
+	let sliderCount = document.querySelectorAll('.swiper-section')
+	let options = {
+	    init: false,
+	    loop: true,
+        lazy: true,
+        slidesPerView: 1,
+        spaceBetween: 0,
+	    pagination: {
+	    el: '.swiper-pagination',
+	    },
+        breakpoints: {
+            // when window width is >= 320px
+            640: {
+                slidesPerView: 2,
+                spaceBetween: 8,
+            },
+            1024: {
+              slidesPerView: 3,
+              spaceBetween: 8,
+            },
+            // when window width is >= 480px
+            1200: {
+              slidesPerView: 4,
+            },
+            // when window width is >= 640px
+            1450: {
+              slidesPerView: 5,
+              spaceBetween: 8,
             }
-        });
-    }
+        }
+	    
+	}
 
-    //востановить пароль
-    if (document.getElementById("forgot")) {
-        let form = document.getElementById("forgot");
-
-        let pristine = new Pristine(form);
-
-        form.addEventListener('submit', function(e) {
-            e.preventDefault();
-            let valid = pristine.validate();
-        });
-    }
-
-    // help
-    let helpItems = document.querySelectorAll('.help__right__item')
-    let helpContent = document.querySelectorAll('.help__content')
-    for (let i = 0; i < helpItems.length; i++) {
-        helpItems[i].setAttribute('data-index', i);
-    }
-
-    // слушает клик
-    for (let helpItem of helpItems) {
-        helpItem.addEventListener('click', (e) => {
-            [].forEach.call(helpItems, function(el) {
-                el.classList.remove('active')
-            });
-            [].forEach.call(helpContent, function(el) {
-                el.classList.remove('active')
-            });
-            helpContent[helpItem.getAttribute('data-index')].classList.add('active')
-            helpItem.classList.add('active')
-
-            // прокрутка к контенту на моб
-            if (window.innerWidth < 768) {
-                let contentOffsetTop = helpContent[helpItem.getAttribute('data-index')].offsetTop
-                window.scrollTo({
-                    top: contentOffsetTop - 50,
-                    behavior: "smooth"
-                })
-            }
-        })
-    }
-
-    // normbasa-d
-    let otchetTreeItems = document.querySelectorAll('.itemfor')
-    let otchetItems = document.querySelectorAll('.otchet__item')
-    for (let otchetTreeItem of otchetTreeItems) {
-        otchetTreeItem.addEventListener('click', function() {
-            [].forEach.call(otchetTreeItems, function(el) {
-                el.classList.remove('active')
-            });
-            [].forEach.call(otchetItems, function(el) {
-                el.classList.remove('active')
-            });
-
-            otchetTreeItem.classList.add('active')
-            otchetItems[otchetTreeItem.getAttribute('data-for')].classList.add('active')
-
-        })
-    }
-
-    // спойлер
-    document.querySelectorAll('.spoiler-head').forEach(el => el.addEventListener('click', function() {
-        let nextBody = el.closest('.spoiler-wrap').querySelector('.spoiler-body')
-        slideToggle(nextBody, 200)
+    const swiperPrev = document.querySelectorAll('.swiper-button-prev')
+    const swiperNext = document.querySelectorAll('.swiper-button-next')
+    swiperPrev.forEach(el => el.addEventListener('click', e => {
+        let parentIndex =  el.closest('.swiper-over').querySelector(".swiper-section").getAttribute('data-index');
+        swiperArray[parentIndex ].slidePrev();
+    }));
+ 
+    swiperNext.forEach(el => el.addEventListener('click', e => {
+        let parentIndex =  el.closest('.swiper-over').querySelector(".swiper-section").getAttribute('data-index');
+        swiperArray[parentIndex].slideNext();
     }));
 
-    // выбор редакции
-    if (document.querySelector('.norm-select__top')) {
-        let normSelectTop = document.querySelector('.norm-select__top')
-        normSelectTop.addEventListener('click', function() {
-            normSelectTop.closest('.norm-select').classList.toggle('active')
-        })
+    swiperArray = []
+	for(let i = 0; i < sliderCount.length; i++){
+        sliderCount[i].setAttribute('data-index', i);
+	    mySwiper = new Swiper(sliderCount[i], options);
+	    mySwiper.init();
 
-        let outElem = document.querySelector('.norm-select');
-        document.addEventListener('click', function(event) {
-            let isClickInside = outElem.contains(event.target);
-            if (!isClickInside) {
-                outElem.classList.remove('active')
-            }
-        });
-
-        let normSelectData = document.querySelector('.norm-select-data')
-        let letNormSelectLi = document.querySelectorAll('.norm-select__bot li')
-        letNormSelectLi.forEach(el => el.addEventListener('click', function() {
-            normSelectData.textContent = el.textContent
-            outElem.classList.remove('active')
-        }))
-    }
-
-    // otchet__tree2
-    let treeLevel = document.querySelectorAll('.tree__item__wrap')
-    for (el of treeLevel) {
-        el.addEventListener('click', function() {
-            let parent = this.closest('.tree__item')
-            if (parent.classList.contains('active')) {
-                parent.classList.remove('active')
-            } else {
-                otherParent = parent.closest('ul').querySelectorAll('.tree__item');
-                [].forEach.call(otherParent, function(el) {
-                    el.classList.remove('active')
-                })
-                parent.classList.add('active')
-            }
-        })
-    }
-
-    let treeFors = document.querySelectorAll('.tree__for')
-    for (treeFor of treeFors) {
-        treeFor.addEventListener('click', function() {
-            [].forEach.call(otchetItems, function(el) {
-                el.classList.remove('active')
-            })
-            otchetItems[this.getAttribute('data-for')].classList.add('active')
-        })
-    }
-
-})();
-
-// пользовательские функции
-function addVal() {
-    let infoLabel = document.querySelector('#add-info')
-    infoLabel.style.display = "block";
-    infoLabel.classList.add('fadein')
-    setTimeout(function() {
-        infoLabel.classList.remove('fadein')
-        setTimeout(function() {
-            infoLabel.style.display = "none";
-        }, 300)
-
-    }, 2000)
-}
-
-function slideToggle(el, duration, callback) {
-    if (el.clientHeight === 0) {
-        _s(el, duration, callback, true);
-    } else {
-        _s(el, duration, callback);
-    }
-}
-
-function slideUp(el, duration, callback) {
-    _s(el, duration, callback);
-}
-
-function slideDown(el, duration, callback) {
-    _s(el, duration, callback, true);
-}
-
-function _s(el, duration, callback, isDown) {
-
-    if (typeof duration === 'undefined') duration = 400;
-    if (typeof isDown === 'undefined') isDown = false;
-
-    el.style.overflow = "hidden";
-    if (isDown) el.style.display = "block";
-
-    var elStyles = window.getComputedStyle(el);
-
-    var elHeight = parseFloat(elStyles.getPropertyValue('height'));
-    var elPaddingTop = parseFloat(elStyles.getPropertyValue('padding-top'));
-    var elPaddingBottom = parseFloat(elStyles.getPropertyValue('padding-bottom'));
-    var elMarginTop = parseFloat(elStyles.getPropertyValue('margin-top'));
-    var elMarginBottom = parseFloat(elStyles.getPropertyValue('margin-bottom'));
-
-    var stepHeight = elHeight / duration;
-    var stepPaddingTop = elPaddingTop / duration;
-    var stepPaddingBottom = elPaddingBottom / duration;
-    var stepMarginTop = elMarginTop / duration;
-    var stepMarginBottom = elMarginBottom / duration;
-
-    var start;
-
-    function step(timestamp) {
-
-        if (start === undefined) start = timestamp;
-
-        var elapsed = timestamp - start;
-
-        if (isDown) {
-            el.style.height = (stepHeight * elapsed) + "px";
-            el.style.paddingTop = (stepPaddingTop * elapsed) + "px";
-            el.style.paddingBottom = (stepPaddingBottom * elapsed) + "px";
-            el.style.marginTop = (stepMarginTop * elapsed) + "px";
-            el.style.marginBottom = (stepMarginBottom * elapsed) + "px";
-        } else {
-            el.style.height = elHeight - (stepHeight * elapsed) + "px";
-            el.style.paddingTop = elPaddingTop - (stepPaddingTop * elapsed) + "px";
-            el.style.paddingBottom = elPaddingBottom - (stepPaddingBottom * elapsed) + "px";
-            el.style.marginTop = elMarginTop - (stepMarginTop * elapsed) + "px";
-            el.style.marginBottom = elMarginBottom - (stepMarginBottom * elapsed) + "px";
-        }
-
-        if (elapsed >= duration) {
-            el.style.height = "";
-            el.style.paddingTop = "";
-            el.style.paddingBottom = "";
-            el.style.marginTop = "";
-            el.style.marginBottom = "";
-            el.style.overflow = "";
-            if (!isDown) el.style.display = "none";
-            if (typeof callback === 'function') callback();
-        } else {
-            window.requestAnimationFrame(step);
-        }
-    }
-
-    window.requestAnimationFrame(step);
-}
+        swiperArray[i] = mySwiper; 
+	}
 
 
-function fadeIn(el, display) {
-    el.style.opacity = 0;
-    el.style.display = display || 'block';
-    (function fade() {
-        var val = parseFloat(el.style.opacity);
-        if (!((val += .1) > 1)) {
-            el.style.opacity = val;
-            requestAnimationFrame(fade);
-        }
-    })();
-}
+    // .tovar-item__action-btn
+    let tovarActionBtn = document.querySelectorAll('.tovar-item__action-btn')
+    tovarActionBtn.forEach(el => el.addEventListener('click', function(){
+        el.classList.toggle('active')
+    }))
 
-function fadeOut(el) {
-    el.style.opacity = 1;
-    (function fade() {
-        if ((el.style.opacity -= .1) < 0) {
-            el.style.display = 'none';
-        } else {
-            requestAnimationFrame(fade);
-        }
-    })();
-};
+
+    // футер меню
+    let footerNavTitle = document.querySelectorAll('.footer__nav__title')
+    footerNavTitle.forEach(el =>el.addEventListener('click', function(){
+        el.closest('.footer__nav').classList.toggle('active')
+    }))
+
+    // каталог на моб
+    let catalogBtns = document.querySelectorAll('.catalog-btn')
+    let mobNavCatalog = document.getElementById('mob-nav-catalog')
+    let catalogCloseBtn = document.getElementById('catalog-close')
+   
+    catalogBtns.forEach(btn =>btn.addEventListener('click', function(){
+       mobNavCatalog.classList.add('active')
+    }))
+    catalogCloseBtn.addEventListener('click', function(){
+        mobNavCatalog.classList.remove('active')
+    })
+
+});
