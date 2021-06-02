@@ -55,7 +55,8 @@ h3 {
   padding: 0 25px;
   -ms-flex-preferred-size: calc(100% - 300px);
       flex-basis: calc(100% - 300px);
-  width: calc(100% - 300px); }
+  width: calc(100% - 300px);
+  padding-bottom: 25px; }
 
 .main {
   display: -ms-flexbox;
@@ -238,34 +239,44 @@ h3 {
   color: #fff; }
 
 .contact {
+  padding-top: 15px;
+  padding-bottom: 15px;
+  margin-top: 0;
+  background-color: #000;
+  color: #fff; }
+
+.contact__wraper {
   display: -ms-flexbox;
   display: flex;
-  -ms-flex-direction: column;
-      flex-direction: column;
   -ms-flex-align: center;
       align-items: center;
-  -ms-flex-pack: center;
-      justify-content: center;
-  padding-top: 50px;
-  margin-bottom: 60px;
-  margin-top: auto; }
+  -ms-flex-pack: justify;
+      justify-content: space-between;
+  width: 100%;
+  max-width: 1920px;
+  margin: 0 auto;
+  padding-right: 15px;
+  padding-left: 15px; }
 
 .contact__wrap {
   display: -ms-flexbox;
   display: flex;
   -ms-flex-pack: center;
       justify-content: center;
-  margin-top: 25px;
-  margin-bottom: 25px; }
+  -ms-flex-align: center;
+      align-items: center; }
+  .contact__wrap a {
+    margin-left: 25px; }
 
 .contact div {
-  font-weight: 700; }
+  font-weight: 400; }
 
 .contact p {
-  text-align: center; }
+  text-align: left;
+  margin-bottom: 0; }
 
 .contact__wrap a img {
-  width: 40px; }
+  width: 30px; }
 
 .content-wrap {
   background-color: #fff;
@@ -290,7 +301,8 @@ h3 {
     padding: 0 15px;
     -ms-flex-preferred-size: calc(100% - 240px);
         flex-basis: calc(100% - 240px);
-    width: calc(100% - 240px); } }
+    width: calc(100% - 240px);
+    padding-bottom: 25px; } }
 
 .mob-top__phone {
   margin-left: 40px; }
@@ -375,11 +387,25 @@ h3 {
   .burger.active .burger-open {
     display: none; }
   .burger.active .burger-close {
-    display: block; }
+    display: block; } }
+
+@media (max-width: 767px) {
+  .contact__wraper {
+    -ms-flex-direction: column-reverse;
+        flex-direction: column-reverse; }
+  .contact__wrap {
+    -ms-flex-direction: column;
+        flex-direction: column;
+    margin-bottom: 10px; }
+  .contact__wrap a {
+    margin: 10px; }
   .contact p {
-    max-width: 290px;
-    display: block;
-    margin: 0 auto; } }
+    max-width: 350px;
+    text-align: center;
+    margin: 0 auto; }
+  .contact {
+    padding-top: 25px;
+    padding-bottom: 25px; } }
 
 .nice-select {
   display: block;
