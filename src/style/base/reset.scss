@@ -35,12 +35,4 @@ textarea:focus{
 body{
     min-width: 320px;
 }
-button{
-    font-family: 'Montserrat', sans-serif;
-}
-input:focus{
-    box-shadow: 0 0 5px rgba(#000, 0.3)
-}
-input.error{
-    border: 1px solid red!important;
-}
+

@@ -1,0 +1,93 @@
+.contact-page__wrap {
+    background-color: #fff;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 15px;
+}
+
+.help-title {
+    text-align: center;
+    width: 100%;
+    margin-top: 25px;
+    margin-bottom: 25px;
+}
+
+.contact-page label {
+    display: inline-block;
+    max-width: 100%;
+    margin-bottom: 5px;
+    font-weight: 700;
+}
+
+.form-control {
+    border-radius: 0;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.b-well__actions {
+    display: flex;
+    justify-content: center;
+}
+
+.contact-susses {
+    border-color: #9acfea;
+    background-color: #d9edf7;
+    border-color: #bce8f1;
+    color: #31708f;
+    border: none;
+    border-left-width: 3px;
+    border-left-style: solid;
+    padding: 15px 10px;
+}
+
+.contact-warn {
+    display: none;
+    border-color: #9acfea;
+    background-color: #f2dede;
+    border-color: #dca7a7;
+    color: #a94442;
+    border: none;
+    border-left-width: 3px;
+    border-left-style: solid;
+    padding: 15px 10px;
+}
+
+.pristine-error {
+    color: #a94442;
+}
+
+.log-page {
+    background-color: #fff;
+    padding: 15px;
+    max-width: 455px;
+    margin: 0 auto;
+}
+
+.log-page .contact-warn,
+.log-page .contact-susses {
+    margin-bottom: 15px;
+}
+
+.text-right {
+    text-align: right;
+}
+
+.forgot a {
+    text-decoration: none;
+}
+
+.forgot a:hover {
+    text-decoration: underline;
+}
+
+.forgot label {
+    margin-bottom: 5px;
+}
+
+.forgot .btn-primary {
+    margin-bottom: 10px;
+    width: 100%;
+}
