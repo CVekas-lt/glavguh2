@@ -166,6 +166,40 @@
         })
     }
 
+    if(document.querySelector('.glide')){
+        new Glide('.glide',{
+            type: 'carousel',
+            startAt: 0,
+            perView: 1
+        }).mount()
+    }
+
+    if(document.querySelector('.calendar__slider')){
+        new Glide('.calendar__slider',{
+            type: 'slider',
+            startAt: 0,
+            perView: 10,
+            dragThreshold: false,
+            rewind: true,
+            breakpoints: {
+                1350: {
+                    perView: 8
+                },
+                1199: {
+                    perView: 12
+                },
+                767: {
+                    perView: 7
+                },
+                424: {
+                    perView: 6
+                }
+            }
+            
+        }).mount()
+    }
+    
+
 })();
 
 // пользовательские функции
