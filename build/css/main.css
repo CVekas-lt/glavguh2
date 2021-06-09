@@ -785,7 +785,11 @@ h3 {
   margin-left: 0;
   margin-bottom: 15px;
   color: #000;
-  display: block; }
+  display: block;
+  text-decoration: none; }
+
+.news__t:hover {
+  text-decoration: underline; }
 
 .news__data {
   margin-bottom: 10px;
@@ -1053,13 +1057,8 @@ h3 {
   -ms-flex-align: center;
       align-items: center;
   font-size: 18px;
-  font-weight: 600;
-  padding: 15px 15px;
+  padding: 10px 15px;
   border-bottom: 1px solid #dad9d9; }
-
-.calendar__top2 span {
-  font-size: 16px;
-  font-weight: 400; }
 
 .calendar__text {
   padding-top: 15px;
@@ -1074,7 +1073,8 @@ h3 {
 .calendar__child {
   border-bottom: 1px solid #dad9d9;
   position: relative;
-  padding: 25px 0; }
+  padding: 25px 0;
+  padding-bottom: 30px; }
 
 .calendar-more-btn {
   position: absolute;
@@ -1197,9 +1197,13 @@ h3 {
         flex: auto;
     margin-bottom: 15px; }
   .calendar__top2 {
-    font-size: 16px; }
-  .calendar__top2 span {
-    font-size: 14px; } }
+    font-size: 16px;
+    -ms-flex-direction: column;
+        flex-direction: column;
+    -ms-flex-align: start;
+        align-items: flex-start; }
+  .calendar__top2 .nice-select {
+    margin-top: 15px; } }
 
 .contact-page__wrap {
   background-color: #fff;
@@ -1428,10 +1432,10 @@ h3 {
   text-align: left; }
 
 .thead div:first-child {
-  width: 50%; }
+  width: 40%; }
 
 .thead div {
-  width: calc(50% / 4);
+  width: calc(60% / 4);
   padding: 15px;
   text-transform: uppercase;
   text-align: center;
@@ -1452,10 +1456,10 @@ h3 {
   padding: 20px 15px;
   font-weight: 600;
   text-align: center;
-  width: calc(50% / 4); }
+  width: calc(60% / 4); }
 
 .tr .ukaz_text-td {
-  width: 50%;
+  width: 40%;
   text-align: left; }
 
 .tr .ukaz__title {
@@ -2029,5 +2033,138 @@ a.tr {
   .otchet__wrap a {
     margin-bottom: 15px; } }
 
+.filter-thead {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: center;
+      align-items: center;
+  -ms-flex-pack: center;
+      justify-content: center;
+  cursor: pointer; }
+
 .otchet__wrap a i {
   margin-right: 5px; }
+
+.table .filter-icon {
+  padding: 0;
+  margin-left: 5px; }
+
+.filter-icon .fa-sort-amount-up-alt {
+  display: none; }
+
+.filter-thead.active .filter-icon .fa-sort-amount-up-alt {
+  display: block; }
+
+.filter-thead.active .filter-icon .fa-sort-amount-down {
+  display: none; }
+
+.profile__top {
+  background-color: #ccf9cc;
+  padding-top: 25px;
+  padding-bottom: 25px; }
+
+.profile .title {
+  margin-bottom: 0;
+  text-align: center;
+  padding: 20px 0; }
+
+.profile__top1 {
+  margin-bottom: 5px;
+  font-size: 16px;
+  color: gray; }
+
+.profile__top2 {
+  font-size: 16px;
+  color: #587ca0; }
+
+@media (max-width: 767px) {
+  .profile__top2 {
+    margin-bottom: 15px; } }
+
+.profile__section {
+  margin-top: 15px;
+  background-color: #f2f2f2;
+  margin-right: 10px;
+  margin-left: 15px;
+  padding: 15px; }
+
+.profile__form {
+  width: 700px;
+  margin: 0 auto;
+  max-width: 100%;
+  color: #587ca0;
+  margin-top: 25px; }
+
+.profile__section__line {
+  margin-bottom: 35px; }
+
+.profile__sec__title {
+  font-size: 16px;
+  font-weight: bold;
+  text-transform: uppercase;
+  text-align: center;
+  margin-bottom: 20px; }
+
+.profile__form label {
+  display: block;
+  text-align: left;
+  margin-bottom: 5px; }
+
+.profile__form input {
+  height: 35px;
+  padding: 15px;
+  color: #587ca0;
+  margin-bottom: 15px; }
+
+.profile__form button {
+  background-color: transparent;
+  border: 0;
+  color: #587ca0;
+  padding: 0; }
+
+.profile__form button:hover {
+  text-decoration: underline; }
+
+@media (max-width: 767px) {
+  .profile__sec__title {
+    text-align: left; }
+  .profile__form input {
+    width: 100%; } }
+
+.profile-sidebar {
+  background-color: #f2f2f2;
+  padding: 15px 30px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.35) inset; }
+
+.profile-sidebar-log {
+  display: -ms-flexbox;
+  display: flex;
+  margin-bottom: 15px; }
+
+.profile-sidebar-log img {
+  width: 32px;
+  height: 32px;
+  margin-right: 10px; }
+
+.profile-sidebar ul {
+  padding-left: 0; }
+
+.profile-sidebar ul li {
+  list-style: none;
+  margin-bottom: 5px; }
+
+.profile-sidebar a {
+  color: #000;
+  text-decoration: none;
+  padding: 2px 0;
+  display: block; }
+
+.profile-sidebar a:hover {
+  color: #0d6efd; }
+
+.profile-sidebar ul li.active a {
+  color: #0d6efd; }
+
+@media (max-width: 1199px) {
+  .profile-sidebar {
+    padding: 15px 15px; } }

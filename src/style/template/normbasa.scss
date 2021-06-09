@@ -24,11 +24,11 @@
 }
 
 .thead div:first-child {
-    width: 50%;
+    width: 40%;
 }
 
 .thead div {
-    width: calc(50% / 4);
+    width: calc(60% / 4);
     padding: 15px;
     text-transform: uppercase;
     text-align: center;
@@ -49,11 +49,11 @@
     padding: 20px 15px;
     font-weight: 600;
     text-align: center;
-    width: calc(50% / 4);
+    width: calc(60% / 4);
 }
 
 .tr .ukaz_text-td {
-    width: 50%;
+    width: 40%;
     text-align: left;
 }
 
@@ -726,7 +726,27 @@ a.tr {
         margin-bottom: 15px;
     }
 }
-
+.filter-thead{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
 .otchet__wrap a i {
     margin-right: 5px;
+}
+.table .filter-icon{
+    padding: 0;
+    margin-left: 5px;
+}
+.filter-icon .fa-sort-amount-up-alt{
+    display: none;
+}
+
+.filter-thead.active .filter-icon .fa-sort-amount-up-alt{
+    display: block;
+}
+
+.filter-thead.active .filter-icon  .fa-sort-amount-down{
+    display: none;
 }

@@ -198,6 +198,12 @@
             
         }).mount()
     }
+
+    // filter-thead
+    let filtertheads = document.querySelectorAll('.filter-thead')
+    filtertheads.forEach(el => el.addEventListener('click', function(){
+        el.classList.toggle('active')
+    }))
     
 
 })();

@@ -10,6 +10,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&amp;display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" crossorigin="anonymous">
     <link rel='stylesheet' type='text/css' media='screen' href='./libs/bootstrap/bootstrap.min.css'>
+    <link rel="stylesheet" href="libs/select/custom-select.css">
     <link rel='stylesheet' type='text/css' media='screen' href='./css/main.min.css'>
 </head>
 
@@ -119,7 +120,15 @@
                     </ol>
                 </nav>
 
-                <div class="title">УКАЗЫ
+                <div class="title calendar__top2">УКАЗЫ
+
+                    <span>
+                        <select class="select">
+                            <option value="1" selected>Все события</option>
+                            <option value="2">Не все события</option>
+                            <option value="3">Гос празники</option>
+                        </select>
+                    </span>
                 </div>
 
                 <div class="ukaz__wrap">
@@ -127,10 +136,30 @@
                         <div class="thead">
 
                             <div>Наименование</div>
-                            <div>Номер</div>
-                            <div>ДАТА</div>
-                            <div>Статус</div>
-                            <div>Дата<br> опубликования</div>
+                            <div class="filter-thead">Номер
+                                <span class="filter-icon">
+                                    <i class="fas fa-sort-amount-up-alt"></i>
+                                    <i class="fas fa-sort-amount-down"></i>
+                                </span>
+                            </div>
+                            <div class="filter-thead">ДАТА
+                                <span class="filter-icon">
+                                    <i class="fas fa-sort-amount-up-alt"></i>
+                                    <i class="fas fa-sort-amount-down"></i>
+                                </span>
+                            </div>
+                            <div class="filter-thead">Статус
+                                <span class="filter-icon">
+                                    <i class="fas fa-sort-amount-up-alt"></i>
+                                    <i class="fas fa-sort-amount-down"></i>
+                                </span>
+                            </div>
+                            <div class="filter-thead">Дата опубликования
+                                <span class="filter-icon">
+                                    <i class="fas fa-sort-amount-up-alt"></i>
+                                    <i class="fas fa-sort-amount-down"></i>
+                                </span>
+                            </div>
 
                         </div>
                         <div class="tbody">
@@ -221,6 +250,7 @@
         </div>
     </footer>
     <script src="./libs/bootstrap/bootstrap.bundle.min.js"></script>
+    <script src="./libs/select/custom-select.js"></script>
     <script src="./js/main.js"></script>
 </body>
 

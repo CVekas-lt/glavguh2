@@ -59,15 +59,14 @@
     justify-content: space-between;
     align-items: center;
     font-size: 18px;
-    font-weight: 600;
-    padding: 15px 15px;
+    padding: 10px 15px;
     border-bottom: 1px solid #dad9d9;
 }
 
-.calendar__top2 span {
-    font-size: 16px;
-    font-weight: 400;
-}
+// .calendar__top2 span {
+//     font-size: 16px;
+//     font-weight: 400;
+// }
 
 .calendar__text {
     padding-top: 15px;
@@ -86,6 +85,7 @@
     border-bottom: 1px solid #dad9d9;
     position: relative;
     padding: 25px 0;
+    padding-bottom: 30px;
 }
 
 .calendar-more-btn {
@@ -226,8 +226,10 @@
     }
     .calendar__top2 {
         font-size: 16px;
+        flex-direction: column;
+        align-items: flex-start;
     }
-    .calendar__top2 span {
-        font-size: 14px;
+    .calendar__top2 .nice-select{
+        margin-top: 15px;
     }
 }

@@ -12,8 +12,11 @@
     margin-bottom: 15px;
     color: #000;
     display: block;
+    text-decoration: none;
 }
-
+.news__t:hover{
+    text-decoration: underline;
+}
 .news__data {
     margin-bottom: 10px;
     font-weight: 400;
