@@ -204,7 +204,53 @@
     filtertheads.forEach(el => el.addEventListener('click', function(){
         el.classList.toggle('active')
     }))
+
+
+     // персональный календарь
+     if (document.getElementById('calendar2')) {
+        let myDate = new Date('2022/01/01').toISOString();
+        let myDate2 = new Date('2022/01/03').toISOString();
+        let myDateArr = [myDate, myDate2]
+
+        const elem = document.getElementById('calendar2');
+        const datepicker = new Datepicker(elem, {
+            language: 'ru',
+            beforeShowDay: function(date) {
+                for(let i = 0; i < myDateArr.length; i++){
+                    if (date.toISOString() == myDateArr[i]) {
+                    return {enabled: true, classes: 'mydate'}
+                    }
+                }
+              }
+        });
+    }
     
+    if(document.getElementById('choose_otchet')){
+        let choose_otchet = document.getElementById('choose_otchet')
+        let choose_otchet__close = document.getElementById('choose_otchet__close')
+    
+        document.getElementById('open-otchet-list').addEventListener('click', ()=>{
+            fadeIn(choose_otchet)
+        })
+    
+        choose_otchet__close.addEventListener('click', ()=>{
+            fadeOut(choose_otchet)
+        })
+    
+        choose_otchet.addEventListener('click', (e)=>{
+            if(!e.target.closest('.choose_otchet__wrap')){
+                fadeOut(choose_otchet)
+            }
+        })
+    }
+
+    let izbItem = document.querySelectorAll('.remove-izb-item')
+    izbItem.forEach(el => el.addEventListener('click', ()=>{
+        el.closest('.izbranoe__item').classList.add('remove')
+        setTimeout(()=>{
+            el.closest('.izbranoe__item').remove()
+        }, 300)
+    }))
 
 })();
 

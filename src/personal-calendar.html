@@ -38,22 +38,39 @@
             <div class="logo">
                 <img src="./img/1c-logo.png">
             </div>
-            <div class="vhod">
-                <div class="login">
+         
+            <div class="profile-sidebar">
+                <div class="profile-sidebar__title">Личный кабинет</div>
+                <div class="profile-sidebar-log">
                     <div>
-                        <img src="./img/user.png">
-                        <span>Личный кабинет</span>
-                    </div>
-                    <div class="vhod__text">
-                        <b>Демонстративный доступ</b> Давно выяснено, что при оценке дизайна и композиции читаемый текст мешает <a href="">сосредоточиться</a>. Lorem Ipsum используют потому, что тот обеспечивает более или менее стандартное заполнение
-                        шаблона
-                    </div>
-                    <div class="vhod-btns">
-                        <a href="" class="btn btn-primary">Вход</a>
-                        <a href="" class="btn btn-link">Регистрация</a>
+                        <div>Богдан Фамилия</div>
+                        <div>verylognemail@gmail.com</div>
+                        <div>Доступ: нет</div>
                     </div>
                 </div>
+                <ul>
+                    <li>
+                        <a href="">
+                            <i class="fas fa-user"></i>
+                            Профиль
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">
+                            <i class="far fa-plus-square"></i>
+                            Избраное
+                        </a>
+                    </li>
+                    <li class="active">
+                        <a href="">
+                            <i class="far fa-calendar-alt"></i>
+                            Личный Календарь
+                        </a>
+                    </li>
+                </ul>
+                <button class="btn btn-primary">Выход</button>
             </div>
+           
             <nav class="navbar">
                 <ul class="sidebar__menu navbar-nav">
                     <li class="nav-item"><a class="nav-link" href=""><i class="fas fa-home"></i>Главная</a></li>
@@ -79,7 +96,6 @@
             </nav>
 
         </div>
-
         <div class="content">
             <div class="top-line">
                 <div class="container-fluid">
@@ -112,16 +128,9 @@
                     </div>
                 </div>
             </div>
-
-            <div class="calendar-wrap">
-
-                <nav aria-label="breadcrumb">
-                    <ol class="breadcrumb">
-                        <li class=""><a href="#">Главная</a></li>
-                        <li class="">Календарь бухгалтера</li>
-                    </ol>
-                </nav>
-
+            <div class="profile personal-calendar content-wrap">
+                
+                <h1 class="title">Личный календарь</h1>
                 <div class="calendar2">
                     <div class="row">
                         <div class="col-xl-3 col-lg-4">
@@ -132,49 +141,24 @@
                                 <option value="3">Декабрь</option>
                                 <option value="4">Февраль</option>
                             </select>
-
+    
                                 <select class="select">
                                 <option value="1" selected>2020</option>
                                 <option value="2">2019</option>
                                 <option value="3">2018</option>
                                 <option value="4">2017</option>
                             </select>
-
+    
                             </div>
-                            <div id="calendar" data-date="01/25/2020"></div>
-                            <div class="calendar__text">
-                                <p>
-                                    <span style="color: #ff0000;">Красный</span> - Выходные и празничные дни
-                                </p>
-                                <p>
-                                    <span style="color: #167bc1;">Синий</span> - Выходные и празничные дни
-                                </p>
-                                <p>
-                                    <b>П.С.У.*</b> - Последний срок оплаты налога, сбора и другого , платежа
-                                </p>
-                                <p>
-                                    <b>П.С.У.*</b> - Последний срок оплаты налога, сбора и другого , платежа
-                                </p>
-                                <p>
-                                    *Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quas reprehenderit in explicabo, doloribus deleniti id voluptate enim error asperiores porro amet veniam iusto at ab?
-                                </p>
-                            </div>
-                            <div class="calendar__text__bot">
-                                См.также:<br>
-                                <a href="">Производственый календарь на 2020</a>
-                            </div>
+                            <div id="calendar2" data-date="01/25/2020"></div>
                         </div>
                         <div class="col-xl-9 col-lg-8">
                             <div class="calendar__block">
                                 <div class="calendar__top2">
-
-                                    Календарь бухгалтера
+    
+                                    Отчеты
                                     <span>
-                                        <select class="select">
-                                            <option value="1" selected>Все события</option>
-                                            <option value="2">Не все события</option>
-                                            <option value="3">Гос празники</option>
-                                        </select>
+                                        <button type="button" id="open-otchet-list" class="btn btn-primary">Добавить отчет</button>
                                     </span>
                                 </div>
                                 <div class="calendar__list">
@@ -536,10 +520,9 @@
                         </div>
                     </div>
                 </div>
-
-
             </div>
-
+            
+          
         </div>
     </div>
     <footer class="contact">
@@ -551,8 +534,94 @@
             </div>
         </div>
     </footer>
+
+    <div id="choose_otchet" class="choose_otchet">
+        <div class="choose_otchet__wrap">
+            <div id="choose_otchet__close" class="choose_otchet__close">
+                <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="times" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 352 512" class="svg-inline--fa fa-times fa-w-11"><path fill="currentColor" d="M242.72 256l100.07-100.07c12.28-12.28 12.28-32.19 0-44.48l-22.24-22.24c-12.28-12.28-32.19-12.28-44.48 0L176 189.28 75.93 89.21c-12.28-12.28-32.19-12.28-44.48 0L9.21 111.45c-12.28 12.28-12.28 32.19 0 44.48L109.28 256 9.21 356.07c-12.28 12.28-12.28 32.19 0 44.48l22.24 22.24c12.28 12.28 32.2 12.28 44.48 0L176 322.72l100.07 100.07c12.28 12.28 32.2 12.28 44.48 0l22.24-22.24c12.28-12.28 12.28-32.19 0-44.48L242.72 256z" class=""></path></svg>
+            </div>
+            <div class="calendar__list">
+                <div class="calendar__child">
+                    <button type="button" class="calendar-more-btn2 btn btn-primary">
+                        Добавить
+                    </button>
+                    <div class="calendar__item__v">
+                        <div class="calendar__item this cal-buh">
+                            <span>чт</span>
+                            <span class="calendar-item__day">17</span> НОЯ 20
+                        </div>
+                        <div class="calendar__item__v2">
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit, mollitia. Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit, mollitia.
+                        </div>
+                        <div class="calendar__item__v3">
+                            П.С.П.О
+                        </div>
+                    </div>
+                    
+                </div>
+                <div class="calendar__child">
+                    <button type="button" class="calendar-more-btn2 btn btn-primary">
+                        Добавить
+                    </button>
+                    <div class="calendar__item__v">
+                        <div class="calendar__item this cal-buh">
+                            <span>чт</span>
+                            <span class="calendar-item__day">17</span> НОЯ 20
+                        </div>
+                        <div class="calendar__item__v2">
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit, mollitia. Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit, mollitia.
+                        </div>
+                        <div class="calendar__item__v3">
+                            П.С.П.О
+                        </div>
+                    </div>
+                    
+                </div>
+                <div class="calendar__child">
+                    <button type="button" class="calendar-more-btn2 btn btn-primary">
+                        Добавить
+                    </button>
+                    <div class="calendar__item__v">
+                        <div class="calendar__item this cal-buh">
+                            <span>чт</span>
+                            <span class="calendar-item__day">17</span> НОЯ 20
+                        </div>
+                        <div class="calendar__item__v2">
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit, mollitia. Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit, mollitia.
+                        </div>
+                        <div class="calendar__item__v3">
+                            П.С.П.О
+                        </div>
+                    </div>
+                    
+                </div>
+                <div class="calendar__child">
+                    <button type="button" class="calendar-more-btn2 btn btn-primary">
+                        Добавить
+                    </button>
+                    <div class="calendar__item__v">
+                        <div class="calendar__item this cal-buh">
+                            <span>чт</span>
+                            <span class="calendar-item__day">17</span> НОЯ 20
+                        </div>
+                        <div class="calendar__item__v2">
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit, mollitia. Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit, mollitia.
+                        </div>
+                        <div class="calendar__item__v3">
+                            П.С.П.О
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+        
+    </div>
+
+
     <script src="./libs/bootstrap/bootstrap.bundle.min.js"></script>
     <script src="./libs/select/custom-select.js"></script>
+    <script src="./libs/validate/pristine.min.js"></script>
     <script src="./libs/datapicker/datepicker-full.min.js"></script>
     <script src="./libs/datapicker/locales/ru.js"></script>
     <script src="./js/main.js"></script>

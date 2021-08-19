@@ -40,25 +40,32 @@
             </div>
          
             <div class="profile-sidebar">
+                <div class="profile-sidebar__title">Личный кабинет</div>
                 <div class="profile-sidebar-log">
-                    <img src="./img/user.png">
                     <div>
                         <div>Богдан Фамилия</div>
                         <div>verylognemail@gmail.com</div>
+                        <div>Доступ: нет</div>
                     </div>
                 </div>
                 <ul>
                     <li class="active">
-                        <a href="">Профиль</a>
+                        <a href="">
+                            <i class="fas fa-user"></i>
+                            Профиль
+                        </a>
                     </li>
                     <li>
-                        <a href="">Мои документы</a>
+                        <a href="">
+                            <i class="far fa-plus-square"></i>
+                            Избраное
+                        </a>
                     </li>
                     <li>
-                        <a href="">Отслыживаемы</a>
-                    </li>
-                    <li>
-                        <a href="">Мои отчеты</a>
+                        <a href="">
+                            <i class="far fa-calendar-alt"></i>
+                            Личный Календарь
+                        </a>
                     </li>
                 </ul>
                 <button class="btn btn-primary">Выход</button>
@@ -132,7 +139,7 @@
                             <div class="profile__top2">Активый до: <b>нет доступа</b></div>
                         </div>
                         <div class="col-xl-3 col-md-4 col-12">
-                            <div class="profile__top1">Ваш ID</div>
+                            <div class="profile__top1">Регистрационный ID акаунта</div>
                             <div class="profile__top2">ID: <b>12222</b></div>
                         </div>
                     </div>
@@ -148,15 +155,22 @@
                                     <input value="Имя Имя Имя">
                                 </div>
                                 <div class="col-md-4">
-                                    <label>E-mail</label>
-                                    <input value="Имя Имя Имя">
+                                    <label class="email-triger">E-mail 
+                                        
+                                        <i class="fas fa-info-circle"></i>
+                                        <div class="email-triger-info">Электронный адрес редактирует  администрация сайта</div>
+                                       
+                                    </label>
+                                    <input value="Имя Имя Имя" disabled>
+                                   
                                 </div>
                                 <div class="col-md-4">
                                     <label>Телефон</label>
                                     <input value="Имя Имя Имя">
                                 </div>
                             </div>
-                            <button type="button">Редактировать персональную информацию</button>
+                            <button type="button">Сохранить</button>
+                            <button type="button">Отменить</button>
                         </div>
 
                         <div class="profile__section__line">
@@ -175,7 +189,8 @@
                                     <input value="Имя Имя Имя">
                                 </div>
                             </div>
-                            <button type="button">Редактировать данные</button>
+                            <button type="button">Сохранить</button>
+                            <button type="button">Отменить</button>
                         </div>
 
                         <div class="profile__section__line">
@@ -194,7 +209,8 @@
                                     <input type="password" value="Имя Имя Имя">
                                 </div>
                             </div>
-                            <button type="button">Редактировать пароль</button>
+                            <button type="button">Сохранить</button>
+                            <button type="button">Отменить</button>
                         </div>
                     </form>
                 </div>

@@ -70,6 +70,7 @@
         border: 0;
         color: #587ca0;
         padding: 0;
+        margin-right: 10px;
     }
     button:hover{
         text-decoration: underline;
@@ -86,9 +87,21 @@
 }
 
 .profile-sidebar {
-    background-color: #f2f2f2;
+    background-color: #487abd;
     padding: 15px 30px;
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.35) inset;
+    color: #fff;
+    .btn-primary{
+        background-color: transparent;
+        border: 1px solid #fff;
+    }
+    .btn-primary:hover{
+        opacity: 0.7;
+    }
+}
+.profile-sidebar__title{
+    margin-bottom: 10px;
+    font-size: 16px;
 }
 .profile-sidebar-log{
     display: flex;
@@ -109,20 +122,141 @@
 }
 
 .profile-sidebar a{
-    color: #000;
+    color: #fff;
     text-decoration: none;
     padding: 2px 0;
     display: block;
+    i{
+        margin-right: 2px;
+    }
 }
 .profile-sidebar a:hover{
-    color: #0d6efd;
+    text-decoration: underline;
 }
 .profile-sidebar ul li.active a{
-    color: #0d6efd;
+    color: rgb(201, 201, 201);
 }
 
 @media(max-width: 1199px){
     .profile-sidebar{
         padding: 15px 15px;
+    }
+}
+
+.email-triger{
+    position: relative;
+}
+.email-triger-info{
+    position: absolute;
+    bottom: 100%;
+    left: 0px;
+    display: none;
+    padding: 5px;
+    background-color: #fff;
+    font-size: 12px;
+    width: 100%;
+}
+
+.email-triger:hover{
+    .email-triger-info{
+        display: block;
+    }
+}
+.personal-calendar{
+    .calendar__select-wrap{
+        margin: 0;
+        padding-top: 8px;
+    }
+    .calendar__select-wrap .nice-select{
+        margin-bottom: 11px;
+    }
+    .calendar__top2{
+        flex-direction: row;
+        align-items: center;
+    }
+    #calendar2 .datepicker-picker{
+        width: 100%;
+    }
+    #calendar2 .datepicker-grid {
+        width: 100%;
+    }
+    #calendar2 {
+        max-width: 375px;
+        border-top: 1px solid #dad9d9;
+        padding-top: 15px;
+        padding-bottom: 15px;
+        border-bottom: 1px solid #dad9d9;
+    } 
+    #calendar2 .datepicker-cell{
+        border-radius: 0;       
+    }
+}
+.datepicker-cell.mydate{
+    background-color: #3273dc;
+    color: #fff;
+    font-weight: 600;
+}
+
+.datepicker-cell.mydate:hover{
+    background-color: #3273dc;
+    color: #fff;
+    font-weight: 600;
+}
+
+.calendar-more-btn2 {
+    position: absolute;
+    right: 10px;
+    bottom: 10px;
+}
+.choose_otchet{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.35);
+    padding: 50px 10px;
+    overflow: auto;
+    display: none;
+    .choose_otchet__wrap{
+        max-width: 600px;
+        background-color: #fff;
+        margin: 0 auto;
+        position: relative;
+    }
+    .choose_otchet__close{
+        width: 25px;
+        height: 25px;
+        color: #fff;
+        position: absolute;
+        top: -25px;
+        right: -25px;
+        cursor: pointer;
+        svg{
+            width: 100%;
+            height: 100%;
+            fill: #fff;
+        }
+    }
+    .calendar__list{
+        padding-bottom: 0;
+        height: auto;
+        margin: 0 auto;
+    }
+    .calendar__child{
+        padding-bottom: 40px;
+    }
+    .calendar__item__v2{
+        -webkit-line-clamp: 2;
+    }
+}
+
+@media(max-width: 1024px){
+    .choose_otchet{
+        padding-top: 100px;
+    }
+    .choose_otchet .choose_otchet__close{
+        right: 0;
+        top: -30px;
     }
 }
