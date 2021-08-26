@@ -78,18 +78,29 @@ h3 {
       align-items: flex-start; }
 
 .login img {
-  width: 32px;
-  height: 32px;
-  margin-right: 10px; }
+  width: 20px;
+  height: 20px;
+  margin-top: -4px;
+  margin-right: 5px; }
 
 .vhod__text {
   margin-top: 15px;
   max-width: 400px; }
 
 .vhod {
-  background-color: #f2f2f2;
+  background-color: #487abd;
   padding: 15px 30px;
+  color: #fff;
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.35) inset; }
+  .vhod .btn-link {
+    color: #fff; }
+  .vhod a {
+    color: #fff; }
+  .vhod .btn-primary {
+    background-color: transparent;
+    border: 1px solid #fff; }
+  .vhod .btn-primary:hover {
+    opacity: .7; }
 
 .vhod-btns {
   margin-top: 15px;
@@ -115,7 +126,7 @@ h3 {
 
 .sidebar__menu li a {
   color: #000;
-  padding: 5px 0;
+  padding: 10px 0;
   display: -ms-flexbox;
   display: flex;
   -ms-flex-align: center;
@@ -266,7 +277,9 @@ h3 {
   -ms-flex-align: center;
       align-items: center; }
   .contact__wrap a {
-    margin-left: 25px; }
+    margin-left: 25px;
+    font-size: 25px;
+    color: #fff; }
 
 .contact div {
   font-weight: 400; }
@@ -926,6 +939,9 @@ h3 {
   -moz-appearance: none;
   -webkit-appearance: none;
   width: 100px; }
+
+.form-today input.datepicker-input {
+  width: 106px; }
 
 .arhiv-val input::-webkit-outer-spin-button,
 .arhiv-val input::-webkit-inner-spin-button {
@@ -1819,7 +1835,7 @@ a.tr {
 .polzunok-input input + label span {
   width: 30px;
   border: 1px solid #cdd1d4;
-  border-radius: 2px;
+  border-radius: 5px;
   padding: 0; }
 
 .norm-select__bot span {
@@ -1855,8 +1871,8 @@ a.tr {
 .polzunok-input input + label span:before {
   content: "";
   display: block;
-  height: 10px;
-  width: 10px;
+  height: 15px;
+  width: 15px;
   border-radius: 100%;
   background-color: #cdd1d4;
   margin-left: 0;
@@ -1865,8 +1881,8 @@ a.tr {
 .polzunok-input input:checked + label span:before {
   content: "";
   display: block;
-  height: 10px;
-  width: 10px;
+  height: 15px;
+  width: 15px;
   border-radius: 100%;
   background-color: #167bc1;
   margin-left: auto; }
@@ -2144,8 +2160,12 @@ a.tr {
     opacity: 0.7; }
 
 .profile-sidebar__title {
-  margin-bottom: 10px;
-  font-size: 16px; }
+  margin-bottom: 15px; }
+  .profile-sidebar__title img {
+    width: 20px;
+    height: 20px;
+    margin-top: -4px;
+    margin-right: 5px; }
 
 .profile-sidebar-log {
   display: -ms-flexbox;
@@ -2173,7 +2193,7 @@ a.tr {
     margin-right: 2px; }
 
 .profile-sidebar a:hover {
-  text-decoration: underline; }
+  opacity: 0.8; }
 
 .profile-sidebar ul li.active a {
   color: #c9c9c9; }

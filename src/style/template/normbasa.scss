@@ -472,7 +472,7 @@ a.tr {
 .polzunok-input input+label span {
     width: 30px;
     border: 1px solid #cdd1d4;
-    border-radius: 2px;
+    border-radius: 5px;
     padding: 0;
 }
 
@@ -515,8 +515,8 @@ a.tr {
 .polzunok-input input+label span:before {
     content: "";
     display: block;
-    height: 10px;
-    width: 10px;
+    height: 15px;
+    width: 15px;
     border-radius: 100%;
     background-color: #cdd1d4;
     margin-left: 0;
@@ -526,8 +526,8 @@ a.tr {
 .polzunok-input input:checked+label span:before {
     content: "";
     display: block;
-    height: 10px;
-    width: 10px;
+    height: 15px;
+    width: 15px;
     border-radius: 100%;
     background-color: #167bc1;
     margin-left: auto;

@@ -224,6 +224,8 @@
               }
         });
     }
+
+
     
     if(document.getElementById('choose_otchet')){
         let choose_otchet = document.getElementById('choose_otchet')
@@ -251,6 +253,15 @@
             el.closest('.izbranoe__item').remove()
         }, 300)
     }))
+
+    // архив валют админ
+    if(document.getElementById('arhiv-val-admin-calendar')){
+        const elem = document.getElementById('arhiv-val-admin-calendar');
+        const datepicker = new Datepicker(elem, {
+            language: 'ru',
+            format: 'dd.mm.yyyy'
+        });
+    }
 
 })();
 
