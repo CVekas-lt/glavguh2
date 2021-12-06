@@ -2349,6 +2349,9 @@ a.tr {
   list-style-type: none;
   list-style-image: none; }
 
+.jstree-children {
+  width: 100%; }
+
 .jstree-node {
   white-space: nowrap; }
 
@@ -2709,7 +2712,11 @@ a.tr {
   min-height: 24px;
   line-height: 24px;
   margin-left: 24px;
-  min-width: 24px; }
+  min-width: 24px;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap; }
 
 .jstree-default .jstree-anchor {
   line-height: 24px;
