@@ -263,6 +263,22 @@
         });
     }
 
+    let categories = document.getElementById('categories')
+    if(categories){
+        let jstree_closed = document.querySelectorAll('.jstree-node i')
+        jstree_closed.forEach(el => el.addEventListener('click', (e)=>{
+            let closest = el.closest('.jstree-node') 
+            if(closest.classList.contains('jstree-closed')){
+                closest.classList.remove('jstree-closed')
+                closest.classList.add('jstree-open')
+            }else{
+                closest.classList.add('jstree-closed')
+                closest.classList.remove('jstree-open')
+            }
+           
+            
+        }))
+    }
 })();
 
 // пользовательские функции
